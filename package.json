@@ -30,12 +30,12 @@
         "use-dencrypt-effect": "1.0.1"
     },
     "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "main -d build",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "reactSnapshot": {
         "exclude": [
@@ -44,7 +44,10 @@
         "snapshotDelay": 1000
     },
     "eslintConfig": {
-        "extends": "react-app"
+        "extends": [
+          "react-app",
+          "react-app/jest"
+        ]
     },
     "browserslist": {
         "production": [
